@@ -4,6 +4,6 @@ Description=Flask Application
 EnvironmentFile=/opt/flask-app/venv/bin/activate
 User=pythonadm
 WorkingDirectory=/opt/flask-app
-ExecStart=/bin/bash -c 'cd /opt/flask-app && source ~/.bashrc && source ./venv/bin/activate && python ./app.py'
+ExecStart=/bin/bash -c 'cd /opt/flask-app && source ~/.bashrc && source ./venv/bin/activate && gunicorn --bind=0.0.0.0 --workers=4 ./app.py'
 [Install]
 WantedBy=multi-user.target

@@ -41,3 +41,20 @@ class RegistrationForm(FlaskForm):
 
         if user:
             raise ValidationError('Username is already in use!')
+
+class LoginForm(FlaskForm):
+    email = StringField('Email',
+        validators=[
+            DataRequired(),
+            Email()
+        ]
+    )
+
+    password = PasswordField('Password',
+        validators=[
+            DataRequired()
+        ]
+    )
+
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')

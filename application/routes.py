@@ -5,6 +5,10 @@ from application import app
 def home():
     return render_template('home.html', title='Home')
 
+@app.route('/register')
+def register():
+    return render_template('register.html', title='Register')
+
 @app.route('/pokemonpage')
 def pokemonpage():
     return render_template('pokemonpage.html', title='Pokemon Page')

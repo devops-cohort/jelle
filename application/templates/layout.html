@@ -1,8 +1,9 @@
 <html>
-	<head>
-		<title>{{ title }} - Page</title>
-	</head>
-	<body>
-		{% block body_content %}{% endblock %}
-	</body>
-</html>
+<body>
+        <div class="navbar">
+                        <a href="{{ url_for('home') }}">Home</a>
+                        <a href="{{ url_for('register') }}">Register</a>
+        </div>
+        {% block body_content %}{% endblock %}
+</body>
+<html>

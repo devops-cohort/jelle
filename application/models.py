@@ -1,7 +1,8 @@
-from application import db, login_manager
+from application import db
 
-class Users(db.model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(50), nullable=False)
     

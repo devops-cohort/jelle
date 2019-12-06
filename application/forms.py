@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from application.models import User
 from flask_login import LoginManager, current_user
@@ -58,3 +58,28 @@ class LoginForm(FlaskForm):
 
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+
+class PokemonForm(FlaskForm):
+    pokemon_name = StringField('Name',
+        validators=[
+            DataRequired(),
+            Length(min=4, max=30)
+        ]
+    )
+
+    pokemon_fast = StringField('fast',
+        validators=[
+            DataRequired(),
+            Length(min=4, max=30)
+        ]
+    )
+
+    pokemon_charge = StringField('charge',
+        validators=[
+            DataRequired(),
+            Length(min=4, max=100)
+        ]
+    )
+
+    submit = SubmitField('Post Content')

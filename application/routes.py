@@ -1,7 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request
 from application import app, db, bcrypt
-from application.models import User
-from application.forms import RegistrationForm, LoginForm
+from application.models import User, Pokemon
+from application.forms import RegistrationForm, LoginForm, PokemonForm 
+
 from flask_login import login_user, current_user, logout_user
 
 @app.route('/')
@@ -12,7 +13,6 @@ def home():
 @app.route('/register', methods=['GET','POST'])
 def register():
     if current_user.is_authenticated:
-        print('a')
         return redirect(url_for('home'))
 
     form = RegistrationForm()
@@ -28,26 +28,20 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        print('a')
         return redirect(url_for('home'))
 
     form = LoginForm()
     if form.validate_on_submit():
-        print('b')
         user=User.query.filter_by(email=form.email.data).first()
 
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            print('c')
             next_page = request.args.get('next')
 
             if next_page:
-                print('d')
                 return redirect(next_page)
             else:
-                print('e')
                 return redirect(url_for('home'))
-            print('f')
     return render_template('login.html', title='Login', form=form)
 
 @app.route('/logout')
@@ -57,7 +51,8 @@ def logout():
 
 @app.route('/pokemonpage')
 def pokemonpage():
-    return render_template('pokemonpage.html', title='Pokemon Page')
+    postData = Pokemon.query.all()
+    return render_template('pokemonpage.html', title='Pokemon Page', posts=postData)
 
 @app.route('/fastmovespage')
 def fastmovespage():

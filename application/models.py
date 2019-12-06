@@ -13,3 +13,11 @@ class User(db.Model, UserMixin):
     
     def __repr__(self):
         return ''.join(['User ID: ', str(self.id), '\r\n', 'Email: ', self.email])
+
+class Pokemon(db.Model):
+    pokemon_name = db.Column(db.String(30), nullable=False, unique=True, primary_key=True)
+    pokemon_fast = db.Column(db.String(30), nullable=False, unique=False)
+    pokemon_charge = db.Column(db.String(30), nullable=False, unique=True)
+
+    def __repr__(self):
+        return ''.join(['Name: ', str(self.pokemon_name), '\r\n', 'Move: ', str(self.pokemon_fast), '\r\n', 'Email: ', str(self.pokemon_charge)])

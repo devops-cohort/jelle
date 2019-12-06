@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body_content %}
+        <h1>Team creator page</h1>
+        <p>Need an account? Sign up!</p>
+        <div class="form">
+                <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                                {{ form.pokemon_name.label }}
+                                {% if form.pokemon_name.errors %}
+                                        {{ form.pokemon_name }}
+                                        <div class="error">
+                                                {% for error in form.pokemon_name.errors %}
+                                                        <span>{{ error }}</span>
+                                                {% endfor %}
+                                        </div>
+                                {% else %}
+                                        {{ form.pokemon_name }}
+                                {% endif %}
+                        </div>
+                        <br>
+                        <div class="form-group">
+                                {{ form.pokemon_fast.label }}
+                                {% if form.pokemon_fast.errors %}
+                                        {{ form.pokemon_fast }}
+                                        <div class="error">
+                                                {% for error in form.pokemon_fast.errors %}
+                                                        <span>{{ error }}</span>
+                                                {% endfor %}
+                                        </div>
+                                {% else %}
+                                        {{ form.pokemon_fast }}
+                                {% endif %}
+                        </div>
+                        <br>
+                        <div class="form-group">
+                                {{ form.pokemon_charge.label }}
+                                {% if form.pokemon_charge.errors %}
+                                        {{ form.pokemon_charge }}
+                                        <div class="error">
+                                                {% for error in form.pokemon_charge.errors %}
+				                        <span>{{ error }}</span>
+                                                {% endfor %}
+                                        </div>
+                                {% else %}
+                                        {{ form.pokemon_charge }}
+                                {% endif %}
+                         </div>
+                        <br>
+                        <div class="form-group">
+                                {{ form.submit }}
+                        </div>
+                </form>
+        </div>
+{% endblock body_content %}

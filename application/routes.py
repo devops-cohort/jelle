@@ -54,9 +54,15 @@ def pokemonpage():
     postData = Pokemon.query.all()
     return render_template('pokemonpage.html', title='Pokemon Page', posts=postData)
 
-@app.route('/fastmovespage')
-def fastmovespage():
-    return render_template('fastmovespage.html', title='Fast Moves Page')
+@app.route('/teamcreatepage', methods=['GET', 'POST'])
+def teamcreatepage():
+    form = PokemonForm()
+    if form.validate_on_submit():
+        pokemon = Pokemon(pokemon_name=form.pokemon_name.data, pokemon_fast=form.pokemon_fast.data, pokemon_charge=form.pokemon_charge.data)
+        db.session.add(pokemon)
+        db.session.commit()
+        return redirect(url_for('pokemonpage'))
+    return render_template('teamcreatepage.html', title='Team Create Page', form=form)
 
 @app.route('/chargemovespage')
 def chargemovespage():

@@ -15,7 +15,8 @@ class User(db.Model, UserMixin):
         return ''.join(['User ID: ', str(self.id), '\r\n', 'Email: ', self.email])
 
 class Pokemon(db.Model):
-    pokemon_name = db.Column(db.String(30), nullable=False, unique=True, primary_key=True)
+    pokemon_id = db.Column(db.Integer, primary_key=True)
+    pokemon_name = db.Column(db.String(30), nullable=False, unique=True)
     pokemon_fast = db.Column(db.String(30), nullable=False, unique=False)
     pokemon_charge = db.Column(db.String(30), nullable=False, unique=True)
 

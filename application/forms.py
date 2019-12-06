@@ -82,4 +82,4 @@ class PokemonForm(FlaskForm):
         ]
     )
 
-    submit = SubmitField('Post Content')
+    submit = SubmitField('Create Pokemon')

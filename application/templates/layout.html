@@ -4,12 +4,14 @@
 		{% if current_user.is_authenticated %}
 			<a href="{{ url_for('home') }}">Home</a>
 			<a href="{{ url_for('logout') }}">Logout</a>
-			<a href="{{ url_for('pokemonpage') }}">Pokemonpage</a>
+			<a href="{{ url_for('pokemonpage') }}">Pokemon Team Page</a>
+			<a href="{{ url_for('teamcreatepage') }}">Team Create Page</a>
 		{% else %}
                         <a href="{{ url_for('home') }}">Home</a>
                         <a href="{{ url_for('login') }}">Login</a>
 			<a href="{{ url_for('register') }}">Register</a>
 			<a href="{{ url_for('pokemonpage') }}">Pokemonpage</a>
+			<a href="{{ url_for('teamcreatepage') }}">Team Create Page</a>
 		{% endif %}
         </div>
         {% block body_content %}{% endblock %}

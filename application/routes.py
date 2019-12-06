@@ -1,9 +1,9 @@
 from flask import Flask, render_template, redirect, url_for, request
 from application import app, db, bcrypt
 from application.models import User, Pokemon
-from application.forms import RegistrationForm, LoginForm, PokemonForm 
+from application.forms import RegistrationForm, LoginForm, PokemonForm, UpdateAccountForm 
 
-from flask_login import login_user, current_user, logout_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/')
 @app.route('/home')
@@ -58,12 +58,26 @@ def pokemonpage():
 def teamcreatepage():
     form = PokemonForm()
     if form.validate_on_submit():
-        pokemon = Pokemon(pokemon_name=form.pokemon_name.data, pokemon_fast=form.pokemon_fast.data, pokemon_charge=form.pokemon_charge.data)
-        db.session.add(pokemon)
+        postData = Pokemon(
+                pokemon_name=form.pokemon_name.data, 
+                pokemon_fast=form.pokemon_fast.data, 
+                pokemon_charge=form.pokemon_charge.data
+                )
+        db.session.add(postData)
         db.session.commit()
         return redirect(url_for('pokemonpage'))
     return render_template('teamcreatepage.html', title='Team Create Page', form=form)
 
-@app.route('/chargemovespage')
-def chargemovespage():
-    return render_template('chargemovespage.html', title='Charge Moves Page')
+@app.route('/account', methods=['GET','POST'])
+@login_required
+def account():
+	form = UpdateAccountForm()
+	if form.validate_on_submit():
+		current_user.username = form.username.data
+		current_user.email = form.email.data
+		db.session.commit()
+		return redirect(url_for('account'))
+	elif request.method == 'GET':
+		form.username.data = current_user.username
+		form.email.data = current_user.email
+	return render_template('account.html', title='Account', form=form)

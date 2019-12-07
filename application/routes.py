@@ -82,3 +82,16 @@ def account():
 		form.username.data = current_user.username
 		form.email.data = current_user.email
 	return render_template('account.html', title='Account', form=form)
+
+@app.route('/deleteaccount', methods=['GET', 'POST'])
+@login_required
+def deleteaccount():
+    user = current_user.id
+    #teams = Team.query.filter_by(user_id=user)
+    #for team in teams:
+       # db.session.delete(team)
+    account = current_user
+    db.session.delete(account)
+    db.session.commit()
+    return redirect(url_for('home'))
+

@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, url_for, request
 from application import app, db, bcrypt
 from application.models import User, Pokemon
 from application.forms import RegistrationForm, LoginForm, PokemonForm, UpdateAccountForm 
-
 from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/')
@@ -25,16 +24,18 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-
+#Rout to login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    #If already logged in, redirect to home page
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    
+    #Creates the form to log in-in forms.py
     form = LoginForm()
+    #If form is valid
     if form.validate_on_submit():
         user=User.query.filter_by(email=form.email.data).first()
-
+        #If password relates to email
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
@@ -45,31 +46,41 @@ def login():
                 return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
 
+#Route to log out a currently logged in user
 @app.route('/logout')
 def logout():
     logout_user()
+    #Once logged out, send user to login page
     return redirect(url_for('login'))
 
+#Route to page with caught pokemon
 @app.route('/pokemonpage')
 def pokemonpage():
+    #Queries information from the Pokemon table
     postData = Pokemon.query.all()
     return render_template('pokemonpage.html', title='Pokemon Page', posts=postData)
 
+#Route to the team creation page
 @app.route('/teamcreatepage', methods=['GET', 'POST'])
 def teamcreatepage():
+    #Sets up the form
     form = PokemonForm()
     if form.validate_on_submit():
+        #Data needed to be enetered in the form
         postData = Pokemon(
                 pokemon_name=form.pokemon_name.data, 
                 pokemon_fast=form.pokemon_fast.data, 
                 pokemon_charge=form.pokemon_charge.data
                 )
+        #Adds and commits the inputted data to the table
         db.session.add(postData)
         db.session.commit()
         return redirect(url_for('pokemonpage'))
     return render_template('teamcreatepage.html', title='Team Create Page', form=form)
 
+#Route to the account page
 @app.route('/account', methods=['GET','POST'])
+#User must be logged in to access it
 @login_required
 def account():
 	form = UpdateAccountForm()
@@ -83,13 +94,12 @@ def account():
 		form.email.data = current_user.email
 	return render_template('account.html', title='Account', form=form)
 
+#Route to delete the account
 @app.route('/deleteaccount', methods=['GET', 'POST'])
+#Must be logged in to access it
 @login_required
 def deleteaccount():
     user = current_user.id
-    #teams = Team.query.filter_by(user_id=user)
-    #for team in teams:
-       # db.session.delete(team)
     account = current_user
     db.session.delete(account)
     db.session.commit()

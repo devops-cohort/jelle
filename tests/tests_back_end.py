@@ -1,16 +1,17 @@
+import pytest
 import unittest
 
 from flask import abort, url_for
 from flask_testing import TestCase
 from os import getenv
 from application import app, db
-from application.models import User
+from application.models import User, Pokemon
 
 
 class TestBase(TestCase):
 
     def create_app(self):
-
+        print("createapp")
         # pass in test configurations
         config_name = 'testing'
         app.config.update(
@@ -21,16 +22,16 @@ class TestBase(TestCase):
         """    
         Will be called before every test
         """
-
+        print("setup")
         db.session.commit()
         db.drop_all()
         db.create_all()
 
         # create test admin user
-        admin = User(id="1", email="admin@admin.com", password="admin2016")
+        admin = User(email="admin@admin.com", password="admin2016")
 
         # create test non-admin user
-        employee = User(id="2", email="test@user.com", password="test2016")
+        employee = User(email="test@user.com", password="test2016")
 
         # save users to database
         db.session.add(admin)
@@ -52,7 +53,7 @@ class testapp(TestBase):
         self.assertEqual(response.status_code, 200)
 
     def test_login_view(self):
-        response = self.client.get(url_for('login'))
+        response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
 
     def test_user_view(self):

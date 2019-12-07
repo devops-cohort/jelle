@@ -8,6 +8,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 @app.route('/')
 @app.route('/home')
 def home():
+    print(current_user)
     return render_template('home.html', title='Home')
 
 @app.route('/register', methods=['GET','POST'])
@@ -29,7 +30,7 @@ def register():
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-
+    
     form = LoginForm()
     if form.validate_on_submit():
         user=User.query.filter_by(email=form.email.data).first()
@@ -73,7 +74,7 @@ def teamcreatepage():
 def account():
 	form = UpdateAccountForm()
 	if form.validate_on_submit():
-		current_user.username = form.username.data
+		current_user.username = formu.username.data
 		current_user.email = form.email.data
 		db.session.commit()
 		return redirect(url_for('account'))

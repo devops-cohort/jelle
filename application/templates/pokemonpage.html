@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
   
 {% block body_content %}
+<h1>Pokemon Caught</h1>
 {% for post in posts %}
         <div>
                 <h3>{{ post.title }}</h3>
-                <p><b> - name:</b>{{ post.pokemon_name}}</p>
-                <p><b> - fast:</b>{{ post.pokemon_fast }}</p>
-		<p><b> - charge:</b>{{ post.pokemon_charge }}</p>
-		<p><b> -added by:</b>{{ post.user_id }}</p>
+                <p><b> Pokemon name:  </b>{{ post.pokemon_name}}</p>
+                <p><b> Pokemon fast move:  </b>{{ post.pokemon_fast }}</p>
+		<p><b> Pokemon charge move:  </b>{{ post.pokemon_charge }}</p>
+		<p><b> Caught by:  </b>{{ post.user_id }}</p>
                 <p>---- {{ post.content }}</p>
         </div>
 {% endfor %}

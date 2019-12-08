@@ -60,25 +60,18 @@ Below are entailed a series of user stories for how the app may be used and thei
 #### Initial plan
 ![Initial ERD](/Documentation/ERD_Initial.jpeg)
 
-The initial plan for the ERD consisted of a lot more tables and entities than were produced in the final application. The tables are coloured based on how I had hoped to prioritise the features of the application, and therefore the order in which I would tackle them. Given the time constraints, I only managed to deliver two tables plus a join, as depicted below
+The initial plan for the project, reflected in the ERD below, consisted of a lot more tables and entities than were produced in the final application. Given the time constraints and technical capability issues, I decided to narrow the range of the scope of the project and so started with a MVP (Minimum Viable Product), which has been created and so I only managed to deliver two tables plus a join, as shown further below. 
 
 #### Delivered solution
 ![Final ERD](/Documentation/ERD_Final.jpeg)
 
-As shown in this ERD, I ended up changing the focus of the initial tables. After building the first entity (poses), I concluded it made more sense to continue making a routine table first, encompassing a many-to-many relationship between the two. My reasoning was that it would make for a more interesting user experience to create routines from the poses, rather than arbitrarily add health benefits to each pose.
+As shown in this ERD, the focus of the initial tables has been altered slightly to remove the team and move set additions. Simply due to time constraints and techinical limitations, I started to create the app more simply, with the intention of expanding it once the MVP was done. However, the MVP was only just completed in time (and with issues!) and so none of the stretch goals (the Could and Should of the MoSCow table) have been achieved.
 
 <a name="testing"></a>
 ## Testing
 
 Pytest unit testing has been used to test the web app, unfortunately, this is currently broken.
 
-<a name="report"></a>
-### Report
-
-[Link to Final Surefire Report](/Documentation/Surefire_Report.pdf)
-
-Test coverage for the backend is at 84%, there are as of yet no working Selenium tests but hope to get these running soon.
-The SonarQube static report shows 9 code smells remaining, 0 bugs, 0 duplications and 0 vulnerabilities.
 
 <a name="depl"></a>
 ## Deployment

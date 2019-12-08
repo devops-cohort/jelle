@@ -76,7 +76,8 @@ Pytest unit testing has been used to test the web app, unfortunately, this is cu
 <a name="depl"></a>
 ## Deployment
 
-A webhook linked to the GitHub feature branch (can also be linked to the master branch if desired) allows for the continouos building and deployment of the web app through a Jenkins server, which is triggered whenever an update is pushed to GitHub.
+A webhook linked to the GitHub feature branch (can also be linked to the master branch if desired) allows for the continouos building and deployment of the web app through a Jenkins server (hosted on a GCP instance), which is triggered whenever an update is pushed to GitHub.
+An instance on the GCP cloud platform containing a mySQL instance hosted the database and was linked to another GCP instance hosting the Flask application. 
 
 ![Deployment Pipeline](/Documentation/CI_Pipeline.jpeg)
 <a name="tech"></a>
@@ -90,13 +91,7 @@ A webhook linked to the GitHub feature branch (can also be linked to the master 
 * Pytest - Unit Testing
 
 
-<a name="FE"></a>
-## Front End Design
-### Wireframes
-Poses
-![Poses Wireframe](/Documentation/Poses_Wireframe.png)
-Routines
-![Routines Wireframe](/Documentation/Routines_Wireframe.png)
+
 ### Final Appearance
 
 <a name="improve"></a>

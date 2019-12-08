@@ -36,6 +36,25 @@ To create a CRUD application with utilisation of supporting tools, methodologies
 This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
 |  | MoSCoW |
+| ------ |
+| Have Unit tests for all web pages |
+| Use Test Driven Development methodology |
+| Have automated deployment with a Jenkins CI Server |
+| Have Version Control System (VCS) and a GitHub repository |
+| Be developed on a feature/development branch |
+| Use python |
+| Use Flask |
+| Use a could hosted database and GCP Compute Engine |
+| Have a Trello board(s) with User Stories, User Requirements, Sprint Backlog |
+| CSS template |
+| Have unique book identifies like ISBN |	
+| Basic instance protections |
+| Have Login features with hashed/encrypted passwords |
+| Search |
+| Have images |
+| Defend against security attacks |
+
+|  | MoSCoW |
 | ------ | ------ |
 | MUST | Have Unit tests for all web pages |
 | MUST | Use Test Driven Development methodology |

@@ -60,7 +60,7 @@ This application is designed to allow users to log recently caught pokemon and t
 The initial plan for the ERD consisted of a lot more tables and entities than were produced in the final application. The tables are coloured based on how I had hoped to prioritise the features of the application, and therefore the order in which I would tackle them. Given the time constraints, I only managed to deliver two tables plus a join, as depicted below
 
 #### Delivered solution
-![Final ERD](/Documentation/ERD_Final.jpg)
+![Final ERD](/Documentation/ERD_Final.jpeg)
 
 As shown in this ERD, I ended up changing the focus of the initial tables. After building the first entity (poses), I concluded it made more sense to continue making a routine table first, encompassing a many-to-many relationship between the two. My reasoning was that it would make for a more interesting user experience to create routines from the poses, rather than arbitrarily add health benefits to each pose.
 

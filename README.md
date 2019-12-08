@@ -52,7 +52,7 @@ As shown in this ERD, I ended up changing the focus of the initial tables. After
 <a name="testing"></a>
 ## Testing
 
-JUnit, Mockito and Selenium tests have been used for automated testing, and SonarLint/SonarQube for static reporting and refactoring.
+Pytest unit testing has been used to test the web app, unfortunately, this is currently broken.
 
 <a name="report"></a>
 ### Report

@@ -35,7 +35,7 @@ To create a CRUD application with utilisation of supporting tools, methodologies
 
 This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
-|  | MoSCoW |
+| MoSCoW |
 | ------ |
 | Have Unit tests for all web pages |
 | Use Test Driven Development methodology |

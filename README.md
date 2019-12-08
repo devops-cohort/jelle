@@ -1,5 +1,5 @@
 # Pokemon Team Creator
-Application to log pokemon caught and their attributes for the SFIA project due Monday week 6 (9/12/2019} at QAC academy
+Application to log pokemon caught and their attributes for the SFIA project due Monday week 6 (9/12/2019) at QAC academy
 
 
 ## Index

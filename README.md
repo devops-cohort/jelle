@@ -35,6 +35,9 @@ To create a CRUD application with utilisation of supporting tools, methodologies
 
 This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
+Below are entailed a series of user stories for how the app may be used and their level of requirement according to a MoSCoW (Must, Shoud, Could, Would) scale.
+
+
 
 |  | User Stories and their MoSCoW |
 | ------ | ------ |
@@ -82,20 +85,17 @@ The SonarQube static report shows 9 code smells remaining, 0 bugs, 0 duplication
 
 A webhook linked to the GitHub feature branch (can also be linked to the master branch if desired) allows for the continouos building and deployment of the web app through a Jenkins server, which is triggered whenever an update is pushed to GitHub.
 
-![Deployment Pipeline](/Documentation/CI_pipeline.jpg)
+![Deployment Pipeline](/Documentation/CI_Pipeline.jpeg)
 <a name="tech"></a>
 ### Technologies Used
 
-* H2 Database Engine - Database
-* Java - Logic
-* Wildfly - Deployment
+* Google Cloud Platform VMs
+* mySQL Instance on VCP - Database
+* Python - Programming
+* Flask - Web microframework
 * Jenkins - CI Server
-* Maven - Dependency Management
-* Jacoco, EclEmma, Surefire - Test Reporting
-* SonarQube - Static Testing
-* [Git](https://github.com/ayshamarty/SoloProject.git) - VCS
-* [Trello](https://trello.com/qasoloproject) - Project Tracking
-* GCP - Live Environment
+* Pytest - Unit Testing
+
 
 <a name="FE"></a>
 ## Front End Design

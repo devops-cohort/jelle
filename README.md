@@ -35,43 +35,26 @@ To create a CRUD application with utilisation of supporting tools, methodologies
 
 This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
-| MoSCoW |
-| ------ |
-| Have Unit tests for all web pages |
-| Use Test Driven Development methodology |
-| Have automated deployment with a Jenkins CI Server |
-| Have Version Control System (VCS) and a GitHub repository |
-| Be developed on a feature/development branch |
-| Use python |
-| Use Flask |
-| Use a could hosted database and GCP Compute Engine |
-| Have a Trello board(s) with User Stories, User Requirements, Sprint Backlog |
-| CSS template |
-| Have unique book identifies like ISBN |	
-| Basic instance protections |
-| Have Login features with hashed/encrypted passwords |
-| Search |
-| Have images |
-| Defend against security attacks |
 
-|  | MoSCoW |
+|  | User Stories and their MoSCoW |
 | ------ | ------ |
-| MUST | Have Unit tests for all web pages |
-| MUST | Use Test Driven Development methodology |
-| MUST | Have automated deployment with a Jenkins CI Server |
-| MUST | Have Version Control System (VCS) and a GitHub repository |
-| MUST | Be developed on a feature/development branch |
-| MUST | Use python |
-| MUST | Use Flask |
-| MUST | Use a could hosted database and GCP Compute Engine |
-| MUST | Have a Trello board(s) with User Stories, User Requirements, Sprint Backlog |
-| SHOULD | CSS template |
+| MUST | As a trainer, I want to be able to add pokemon to my database so that I know what they are |
+| MUST | As a trainer, I want to be able to add pokemon moves so that I know what moves are available and what their power is |
+| MUST | As a trainer, I want to be able to view the pokemon and their movesets that I have entered |
+| SHOULD | As a trainer, I want to be able to create a team out of the pokemon in the database so that I can use a preset team in gameplay |
+| SHOULD | As a trainer, I want to be able to create multiple teams out of the pokemon in the database so that I can create teams for gameplay |
+| SHOULD | As a trainer, I want to be able to delete teams when I no longer need them so that my team list does not become too cluttered |
+| SHOULD | As a trainer, I want to see the pokemon in the my team so that I know what that team is good for |
+| COULD | As a trainer, I want to see the movesets and damage of the pokemon in my team so that I can better see what my team is good for |
+| COULD | As a trainer, I want to be able to see the theme (typing) of my teams so that I can easily select one for gameplay |
+| COULD | As a user, I want to use an app that looks nice so that I can enjoy using it |
 | SHOULD | Have unique book identifies like ISBN |	
 | SHOULD | Basic instance protections |
 | SHOULD | Have Login features with hashed/encrypted passwords |
 | COULD | Search |
 | COULD | Have images |
 | WOULD | Defend against security attacks |
+
 <a name="architecture"></a>
 ## Architecture
 <a name="erd"></a>

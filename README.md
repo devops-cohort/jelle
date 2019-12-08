@@ -60,7 +60,7 @@ Below are entailed a series of user stories for how the app may be used and thei
 #### Initial plan
 ![Initial ERD](/Documentation/ERD_Initial.jpeg)
 
-The initial plan for the project, reflected in the ERD below, consisted of a lot more tables and entities than were produced in the final application. Given the time constraints and technical capability issues, I decided to narrow the range of the scope of the project and so started with a MVP (Minimum Viable Product), which has been created and so I only managed to deliver two tables plus a join, as shown further below. 
+The initial plan for the project, reflected in the ERD above, consisted of a lot more tables and entities than were produced in the final application. Given the time constraints and technical capability issues, I decided to narrow the range of the scope of the project and so started with a MVP (Minimum Viable Product), which has been created and so I only managed to deliver two tables plus a join, as shown below. 
 
 #### Delivered solution
 ![Final ERD](/Documentation/ERD_Final.jpeg)

@@ -48,12 +48,7 @@ This application is designed to allow users to log recently caught pokemon and t
 | COULD | As a trainer, I want to see the movesets and damage of the pokemon in my team so that I can better see what my team is good for |
 | COULD | As a trainer, I want to be able to see the theme (typing) of my teams so that I can easily select one for gameplay |
 | COULD | As a user, I want to use an app that looks nice so that I can enjoy using it |
-| SHOULD | Have unique book identifies like ISBN |	
-| SHOULD | Basic instance protections |
-| SHOULD | Have Login features with hashed/encrypted passwords |
-| COULD | Search |
-| COULD | Have images |
-| WOULD | Defend against security attacks |
+
 
 <a name="architecture"></a>
 ## Architecture

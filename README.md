@@ -35,8 +35,6 @@ To create a CRUD application with utilisation of supporting tools, methodologies
 
 This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
-The many to many relationship between poses and routines is working, where poses can be added and removed from routines.
-
 <a name="architecture"></a>
 ## Architecture
 <a name="erd"></a>
@@ -50,14 +48,6 @@ The initial plan for the ERD consisted of a lot more tables and entities than we
 ![Final ERD](/Documentation/ERD_Final.jpg)
 
 As shown in this ERD, I ended up changing the focus of the initial tables. After building the first entity (poses), I concluded it made more sense to continue making a routine table first, encompassing a many-to-many relationship between the two. My reasoning was that it would make for a more interesting user experience to create routines from the poses, rather than arbitrarily add health benefits to each pose.
-
-<a name="mla"></a>
-### Multi Tier Architecture Diagram
-Please click on the diagram for a high resolution version:
-![MTA](/Documentation/MTA.jpg)
-
-This is a very high-level architecture diagram to demonstrate the architecture of the application. It does not include getters and setters, test classes, or constants classes. 
-
 
 <a name="testing"></a>
 ## Testing
@@ -75,9 +65,7 @@ The SonarQube static report shows 9 code smells remaining, 0 bugs, 0 duplication
 <a name="depl"></a>
 ## Deployment
 
-The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event
-
-This application can be deployed both locally and externally through a virtual machine. The constants.js file has commented out options to switch from an external to local IP address.
+A webhook linked to the GitHub feature branch (can also be linked to the master branch if desired) allows for the continouos building and deployment of the web app through a Jenkins server, which is triggered whenever an update is pushed to GitHub.
 
 ![Deployment Pipeline](/Documentation/CI_pipeline.jpg)
 <a name="tech"></a>
@@ -113,11 +101,4 @@ In later sprints, I would also like create a health-benefit entity which would h
 <a name="auth"></a>
 ## Authors
 
-Aysha Marty
-
-<a name="ack"></a>
-## Acknowledgements
-
-* QA consulting and our fantastic instructors
-* The rest of our wonderful cohort on the programme
-
+Jelle Vinkenoog

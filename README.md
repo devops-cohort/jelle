@@ -1,8 +1,6 @@
 # Pokemon Team Creator
-Application to add pokemon and movesets to a team builder for the SFIA project due Monday week 6 at QAC academy
-# Personal yoga application
+Application to log pokemon caught and their attributes for the SFIA project due Monday week 6 (9/12/2019} at QAC academy
 
-In fulfilment of the solo project assignment due Monday week 7 at QA consulting.
 
 ## Index
 [Brief](#brief)
@@ -30,12 +28,12 @@ In fulfilment of the solo project assignment due Monday week 7 at QA consulting.
 <a name="brief"></a>
 ## The Brief
 
-To create an OOP-based application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training. The application must manipulate two tables with full CRUD functionality.
+To create a CRUD application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training.
 
 <a name="solution"></a>
 ### Solution
 
-I decided to create a personal yoga application that would allow the user to create poses and routines, as well as add and remove poses from each routine.
+This application is designed to allow users to log recently caught pokemon and their attributes (ie movesets) with the intention of using these pokemon to form teams. 
 
 The many to many relationship between poses and routines is working, where poses can be added and removed from routines.
 

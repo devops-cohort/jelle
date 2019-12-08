@@ -55,7 +55,7 @@ This application is designed to allow users to log recently caught pokemon and t
 <a name="erd"></a>
 ### Entity Relationship Diagrams
 #### Initial plan
-![Initial ERD](/Documentation/ERD_Initial_Plan.jpg)
+![Initial ERD](/Documentation/ERD_Initial.jpeg)
 
 The initial plan for the ERD consisted of a lot more tables and entities than were produced in the final application. The tables are coloured based on how I had hoped to prioritise the features of the application, and therefore the order in which I would tackle them. Given the time constraints, I only managed to deliver two tables plus a join, as depicted below
 

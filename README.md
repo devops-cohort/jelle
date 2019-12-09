@@ -2,7 +2,7 @@
 Application to log pokemon caught and their attributes for the SFIA project due Monday week 6 (9/12/2019) at QAC academy
 
 Presentation: https://docs.google.com/presentation/d/1tm3JUXxm1hJjnSwjx0A_a75Bs4UwrT1y485jIgPjrs0/edit?usp=sharing  <br/>
-Trello: 
+Trello:  https://trello.com/b/g4A72TEz/sfia-project <br/>
 Website: http://34.89.72.242:5000/home
 
 

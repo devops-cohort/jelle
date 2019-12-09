@@ -1,6 +1,10 @@
 # Pokemon Team Creator
 Application to log pokemon caught and their attributes for the SFIA project due Monday week 6 (9/12/2019) at QAC academy
 
+Presentation:
+Trello: 
+Website: 
+
 
 ## Index
 [Brief](#brief)
@@ -70,8 +74,8 @@ As shown in this ERD, the focus of the initial tables has been altered slightly 
 <a name="testing"></a>
 ## Testing
 
-Pytest unit testing has been used to test the web app, unfortunately, this is currently broken.
-
+Pytest unit testing has been used to test the web app, currently only for being tested for accessing certain pages depending on whether a user is logged in or not. Shown below is a coverage report for the app.
+![Coverage Report](/Documentation/report.png)
 
 <a name="depl"></a>
 ## Deployment

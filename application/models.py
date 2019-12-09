@@ -21,8 +21,7 @@ class User(db.Model, UserMixin):
     
     def __repr__(self):
         return ''.join([
-            'User ID: ', str(self.id), '\r\n',
-            'Email: ', self.email
+            'User ID: ', str(self.username)
             ])
 
 class Pokemon(db.Model):

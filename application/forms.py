@@ -81,7 +81,7 @@ class PokemonForm(FlaskForm):
             Length(min=4, max=100)
         ]
     )
-    user_id = current_user
+    #user_id = current_user
 
     submit = SubmitField('Create Pokemon')
 

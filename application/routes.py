@@ -63,6 +63,7 @@ def pokemonpage():
 #Route to the team creation page
 @app.route('/teamcreatepage', methods=['GET', 'POST'])
 def teamcreatepage():
+    user_id = current_user
     #Sets up the form
     form = PokemonForm()
     if form.validate_on_submit():
@@ -70,7 +71,8 @@ def teamcreatepage():
         postData = Pokemon(
                 pokemon_name=form.pokemon_name.data, 
                 pokemon_fast=form.pokemon_fast.data, 
-                pokemon_charge=form.pokemon_charge.data
+                pokemon_charge=form.pokemon_charge.data,
+                user_id = current_user.id
                 )
         #Adds and commits the inputted data to the table
         db.session.add(postData)

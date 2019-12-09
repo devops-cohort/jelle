@@ -5,6 +5,7 @@ Application to log pokemon caught and their attributes for the SFIA project due 
 ## Index
 [Brief](#brief)
    * [Solution](#solution)
+   * [Trello](#trello)
    
 [Architecture](#architecture)
    * [Entity Relationship Diagrams](#erd)
@@ -47,6 +48,10 @@ Below are entailed a series of user stories for how the app may be used and thei
 | COULD | As a trainer, I want to be able to see the theme (typing) of my teams so that I can easily select one for gameplay |
 | COULD | As a user, I want to use an app that looks nice so that I can enjoy using it |
 
+<a name="trello"></a>
+### Trello
+![Trello1](/Documentation/trello1.png)
+![Trello2](/Documentation/trello2.png)
 
 <a name="architecture"></a>
 ## Architecture

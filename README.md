@@ -100,8 +100,10 @@ Pytest unit testing has been used to test the web app, currently only for being 
 
 Despite numerous warnings about the dangers of being overly ambitious, my initial ERD and goals were overly ambitious and meant that a lot of time was wasted on creating pages and forms that would never be used. More time was spent trying to figure out how to technicially create something similar to what my goal was. Whilst this time was spent trying to learn a technology and cannot be considered as time wasted (given that I definetely learnt from it), it is still time that ate into what I was able to do for this project. In the future I will try to ensure that I create a plan with an easily scalable solution; an MVP that can easily be changed into a more interesting product should time allow for it. In any case, simplicity is not my enemy and I should try to embrace it and use it as a stepping stone.
 <br/>
+&nbsp;
 Due to this, I would say that the majority of the improvements that this app could do with, relate to implementing (firstly learning how to correctly implement) the functions that I was not able to achieve due to time constraints.
 <br/>
+&nbsp;
 A further improvement to this app relates to the visuals of the app. Currently, the app is not interesing to look at or interact with (partially as the scope of this project focused on creating an app that worked, and not an app that looked good), however, a visually appealing product is something that is highly valued in the world at present, so I would work on using CSS and Bootsrtap to create a more visually appealing app.
 
 <a name="auth"></a>

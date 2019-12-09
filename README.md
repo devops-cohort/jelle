@@ -14,11 +14,11 @@ Website: http://34.89.72.242:5000/home
 [Architecture](#architecture)
    * [Entity Relationship Diagrams](#erd)
 	
-[Testing](#testing)
-
-     
+    
 [Deployment](#depl)
    * [Technologies Used](#tech)
+   
+[Testing](#testing)
      
 
 [Improvements for the Future](#improve)
@@ -71,11 +71,6 @@ The initial plan for the project, reflected in the ERD above, consisted of a lot
 
 As shown in this ERD, the focus of the initial tables has been altered slightly to remove the team and move set additions. Simply due to time constraints and techinical limitations, I started to create the app more simply, with the intention of expanding it once the MVP was done. However, the MVP was only just completed in time (and with issues!) and so none of the stretch goals (the Could and Should of the MoSCow table) have been achieved.
 
-<a name="testing"></a>
-## Testing
-
-Pytest unit testing has been used to test the web app, currently only for being tested for accessing certain pages depending on whether a user is logged in or not. Shown below is a coverage report for the app.
-![Coverage Report](/Documentation/report.png)
 
 <a name="depl"></a>
 ## Deployment
@@ -94,6 +89,11 @@ An instance on the GCP cloud platform containing a mySQL instance hosted the dat
 * Jenkins - CI Server
 * Pytest - Unit Testing
 
+<a name="testing"></a>
+## Testing
+
+Pytest unit testing has been used to test the web app, currently only for being tested for accessing certain pages depending on whether a user is logged in or not. Shown below is a coverage report for the app.
+![Coverage Report](/Documentation/report.png)
 
 <a name="improve"></a>
 ## Improvements for the Future and Difficulties

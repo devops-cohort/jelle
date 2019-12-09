@@ -3,7 +3,7 @@ Application to log pokemon caught and their attributes for the SFIA project due 
 
 Presentation:
 Trello: 
-Website: 
+Website: http://34.89.72.242:5000/home
 
 
 ## Index

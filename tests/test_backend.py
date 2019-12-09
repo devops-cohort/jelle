@@ -15,7 +15,7 @@ class TestBase(TestCase):
         # pass in test configurations
         config_name = 'testing'
         app.config.update(
-            SQLALCHEMY_DATABASE_URI='mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASSWORD'))+'@'+str(getenv('MYSQL_HOST'))+'/'+str(getenv('MYSQL_TEST_DB'))        )
+            SQLALCHEMY_DATABASE_URI='mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASSWORD'))+'@'+str(getenv('MYSQL_HOST'))+'/'+str(getenv('MYSQL_TEST_DB')))
         return app
 
     def setUp(self):
@@ -28,10 +28,10 @@ class TestBase(TestCase):
         db.create_all()
 
         # create test admin user
-        admin = User(email="admin@admin.com", password="admin2016")
+        admin = User(username="admin1", email="admin@admin.com", password="admin2016")
 
         # create test non-admin user
-        employee = User(email="test@user.com", password="test2016")
+        employee = User(username="user1", email="test@user.com", password="test2016")
 
         # save users to database
         db.session.add(admin)
@@ -53,7 +53,7 @@ class testapp(TestBase):
         self.assertEqual(response.status_code, 200)
 
     def test_login_view(self):
-        response = self.client.get(url_for('home'))
+        response = self.client.get(url_for('login'))
         self.assertEqual(response.status_code, 200)
 
     def test_user_view(self):

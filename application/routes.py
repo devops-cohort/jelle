@@ -105,3 +105,7 @@ def deleteaccount():
     db.session.commit()
     return redirect(url_for('home'))
 
+#Route to log out a currently logged in user
+@app.route("/index")
+def index():
+    return render_template('index.html', title='Coverage')

@@ -3,22 +3,27 @@ from application import app, db, bcrypt
 from application.models import User, Pokemon
 from application.forms import RegistrationForm, LoginForm, PokemonForm, UpdateAccountForm 
 from flask_login import login_user, current_user, logout_user, login_required
-
+#Route to home page
 @app.route('/')
 @app.route('/home')
 def home():
     print(current_user)
+    #Requests the home.html file for this route
     return render_template('home.html', title='Home')
 
+#Route to register page. 'GET' and 'POST' allow for user interactions with submissions on these pages
 @app.route('/register', methods=['GET','POST'])
 def register():
+    #If user logged in; redirect to home
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-
+    #Sets up registration form
     form = RegistrationForm()
     if form.validate_on_submit():
+	#hash password
         hashed_pw = bcrypt.generate_password_hash(form.password.data)
         user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
+	#adds user to database
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('home'))

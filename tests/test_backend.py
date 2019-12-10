@@ -57,7 +57,7 @@ class testapp(TestBase):
         self.assertEqual(response.status_code, 200)
 
     def test_user_view(self):
-        target_url = url_for('user', user_id=2)
+        target_url = url_for('teamcreatepage', user_id=1)
         redirect_url = url_for('login', next=target_url)
         response = self.client.get(target_url)
         self.assertEqual(response.status_code, 302)

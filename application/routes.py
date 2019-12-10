@@ -62,6 +62,7 @@ def pokemonpage():
 
 #Route to the team creation page
 @app.route('/teamcreatepage', methods=['GET', 'POST'])
+@login_required
 def teamcreatepage():
     user_id = current_user
     #Sets up the form

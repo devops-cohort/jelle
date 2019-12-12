@@ -60,6 +60,7 @@ def logout():
 
 #Route to page with caught pokemon
 @app.route('/pokemonpage')
+@login_required
 def pokemonpage():
     #Queries information from the Pokemon table
     postData = Pokemon.query.all()

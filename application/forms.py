@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from application.models import User
 from flask_login import LoginManager, current_user
 
+#Create form to enter details in registration-with validators to ensure that data is entered in the right formats
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
             validators=[
@@ -31,17 +32,17 @@ class RegistrationForm(FlaskForm):
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
-
+#Check if the email is already in the email column of the user database
         if user:
             raise ValidationError('Email is already in use!')
 
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
-
+#Check if username is already being used
         if user:
             raise ValidationError('Username is already in use!')
-
+#Create login form
 class LoginForm(FlaskForm):
     email = StringField('Email',
         validators=[
@@ -59,7 +60,7 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
-
+#Create pokemon form
 class PokemonForm(FlaskForm):
     pokemon_name = StringField('Name',
         validators=[
@@ -85,7 +86,7 @@ class PokemonForm(FlaskForm):
 
     submit = SubmitField('Create Pokemon')
 
-
+#Create account update form
 class UpdateAccountForm(FlaskForm):
         username= StringField('User Name',
                 validators=[

@@ -1,0 +1,13 @@
+.gitignore
+htmlcov
+/venv/
+*.md
+*.txt
+!requirements.txt
+/Documentation/
+/__pycache__/
+.*
+/application/.*
+/application/__pycache__/
+/tests/.*
+/tests/__pycache__/

@@ -12,4 +12,6 @@ COPY . .
 
 EXPOSE 5000
 
+RUN ls -al /app/tests
+
 ENTRYPOINT [ "/usr/bin/python3", "app.py" ] 

@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+  client:
+      image: flask:latest
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - target: 5000
+          protocol: tcp
+
+      environment: 
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_HOST=${MYSQL_HOST}
+        - MYSQL_DB=${MYSQL_DB}
+        - YOUR_SECRET_KEY=${YOUR_SECRET_KEY}
+        - MYSQL_TEST_DB=${MYSQL_TEST_DB} 
